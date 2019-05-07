@@ -1,9 +1,8 @@
 package com.example.zmxweather.di.module;
 
 import com.example.zmxweather.adapters.CityAdapter;
-import com.example.zmxweather.presenter.WeatherPresenter;
-import com.example.zmxweather.ui.WeatherViewActivity;
-import com.example.zmxweather.view.IWeatherView;
+import com.example.zmxweather.mvp.presenter.WeatherPresenter;
+import com.example.zmxweather.mvp.view.IWeatherView;
 
 import dagger.Module;
 import dagger.Provides;

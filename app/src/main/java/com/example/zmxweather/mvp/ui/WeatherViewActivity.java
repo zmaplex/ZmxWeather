@@ -1,4 +1,4 @@
-package com.example.zmxweather.ui;
+package com.example.zmxweather.mvp.ui;
 
 import android.os.Bundle;
 import android.view.Menu;
@@ -15,8 +15,8 @@ import com.example.zmxweather.adapters.CityAdapter;
 import com.example.zmxweather.bean.CityBean;
 import com.example.zmxweather.di.component.DaggerWeatherComponent;
 import com.example.zmxweather.di.module.WeatherModule;
-import com.example.zmxweather.presenter.WeatherPresenter;
-import com.example.zmxweather.view.IWeatherView;
+import com.example.zmxweather.mvp.presenter.WeatherPresenter;
+import com.example.zmxweather.mvp.view.IWeatherView;
 
 import java.util.List;
 

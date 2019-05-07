@@ -1,4 +1,4 @@
-package com.example.zmxweather.view;
+package com.example.zmxweather.mvp.view;
 
 import com.example.zmxweather.bean.CityBean;
 

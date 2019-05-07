@@ -1,22 +1,21 @@
-package com.example.zmxweather.model;
-
-import android.os.Looper;
+package com.example.zmxweather.mvp.model;
 
 import com.example.zmxweather.AppConfig;
 import com.example.zmxweather.api.ApiInterfaceService;
 import com.example.zmxweather.bean.CityBean;
-import com.example.zmxweather.presenter.WeatherPresenter;
+import com.example.zmxweather.mvp.presenter.WeatherPresenter;
 import com.example.zmxweather.utils.RetrofitManger;
 
 import java.util.List;
 import java.util.stream.Collectors;
+
+import javax.inject.Inject;
 
 import io.reactivex.Observable;
 import io.reactivex.ObservableOnSubscribe;
 import io.reactivex.Observer;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.Disposable;
-import io.reactivex.functions.Function;
 import io.reactivex.schedulers.Schedulers;
 import retrofit2.Retrofit;
 import timber.log.Timber;
@@ -24,6 +23,7 @@ import timber.log.Timber;
 public class WeatherModel implements IWeatherModel {
     private WeatherPresenter mWeatherPresenter;
 
+    @Inject
     public WeatherModel(WeatherPresenter weatherPresenter) {
         mWeatherPresenter = weatherPresenter;
     }

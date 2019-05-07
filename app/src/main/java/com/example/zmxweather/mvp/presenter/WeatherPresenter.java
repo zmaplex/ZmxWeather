@@ -1,9 +1,9 @@
-package com.example.zmxweather.presenter;
+package com.example.zmxweather.mvp.presenter;
 
 import com.example.zmxweather.bean.CityBean;
-import com.example.zmxweather.model.IWeatherModel;
-import com.example.zmxweather.model.WeatherModel;
-import com.example.zmxweather.view.IWeatherView;
+import com.example.zmxweather.mvp.model.IWeatherModel;
+import com.example.zmxweather.mvp.model.WeatherModel;
+import com.example.zmxweather.mvp.view.IWeatherView;
 import java.util.List;
 import timber.log.Timber;
 
