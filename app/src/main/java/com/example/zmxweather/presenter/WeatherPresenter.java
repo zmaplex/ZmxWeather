@@ -4,9 +4,7 @@ import com.example.zmxweather.bean.CityBean;
 import com.example.zmxweather.model.IWeatherModel;
 import com.example.zmxweather.model.WeatherModel;
 import com.example.zmxweather.view.IWeatherView;
-
 import java.util.List;
-
 import timber.log.Timber;
 
 public class WeatherPresenter implements IWeatherPresenter {
@@ -25,7 +23,7 @@ public class WeatherPresenter implements IWeatherPresenter {
 
     @Override
     public void getCityDataSuccess(List<CityBean> cityBeans) {
-        Timber.e("=====================getCityDataSuccess回调");
+        Timber.e("getCityDataSuccess回调");
         mIWeatherView.setCity(cityBeans);
     }
 
@@ -41,7 +39,6 @@ public class WeatherPresenter implements IWeatherPresenter {
 
     @Override
     public void getFilterCitySuccess(List<CityBean> cityBeans) {
-
 
     }
 
