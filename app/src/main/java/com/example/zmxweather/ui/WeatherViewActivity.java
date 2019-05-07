@@ -1,4 +1,4 @@
-package com.example.zmxweather.view;
+package com.example.zmxweather.ui;
 
 import android.os.Bundle;
 import android.view.Menu;
@@ -15,10 +15,11 @@ import com.example.zmxweather.adapters.CityAdapter;
 import com.example.zmxweather.bean.CityBean;
 import com.example.zmxweather.presenter.IWeatherPresenter;
 import com.example.zmxweather.presenter.WeatherPresenter;
+import com.example.zmxweather.view.IWeatherView;
 
 import java.util.List;
 
-public class WeatherView extends AppCompatActivity implements IWeatherView, SearchView.OnQueryTextListener {
+public class WeatherViewActivity extends AppCompatActivity implements IWeatherView, SearchView.OnQueryTextListener {
     //初始化城市数据
 
     IWeatherPresenter mIWeatherPresenter;
