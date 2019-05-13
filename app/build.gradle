@@ -40,6 +40,10 @@ ext {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
+    //lib
+
+    implementation project(':common')
+
     // other
 
     implementation "com.google.code.gson:gson:$gson"
