@@ -6,7 +6,6 @@ import android.view.MenuItem;
 import android.widget.SearchView;
 
 import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -17,13 +16,14 @@ import com.example.zmxweather.di.component.DaggerWeatherComponent;
 import com.example.zmxweather.di.module.WeatherModule;
 import com.example.zmxweather.mvp.presenter.WeatherPresenter;
 import com.example.zmxweather.mvp.view.IWeatherView;
+import com.zmaplex.common.BaseMVPActivity;
 
 import java.util.List;
 
 import javax.inject.Inject;
 
-public class WeatherViewActivity extends AppCompatActivity implements IWeatherView, SearchView.OnQueryTextListener {
-    //初始化城市数据
+public class WeatherViewActivity extends BaseMVPActivity<WeatherPresenter> implements IWeatherView, SearchView.OnQueryTextListener {
+
     @Inject
     WeatherPresenter mWeatherPresenter;
     @Inject

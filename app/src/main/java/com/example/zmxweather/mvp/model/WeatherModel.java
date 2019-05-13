@@ -3,6 +3,7 @@ package com.example.zmxweather.mvp.model;
 import com.example.zmxweather.AppConfig;
 import com.example.zmxweather.api.ApiInterfaceService;
 import com.example.zmxweather.bean.CityBean;
+import com.example.zmxweather.mvp.presenter.IWeatherPresenter;
 import com.example.zmxweather.mvp.presenter.WeatherPresenter;
 import com.example.zmxweather.utils.RetrofitManger;
 
@@ -21,15 +22,14 @@ import retrofit2.Retrofit;
 import timber.log.Timber;
 
 public class WeatherModel implements IWeatherModel {
-    private WeatherPresenter mWeatherPresenter;
 
     @Inject
-    public WeatherModel(WeatherPresenter weatherPresenter) {
-        mWeatherPresenter = weatherPresenter;
+    public WeatherModel() {
+
     }
 
     @Override
-    public void filterCity(List<CityBean> cityBeans, String key) {
+    public void filterCity(List<CityBean> cityBeans, String key, IWeatherPresenter mWeatherPresenter) {
         Observable.create((ObservableOnSubscribe<List<CityBean>>) e -> {
             List<CityBean> mCityBeans;
             mCityBeans = cityBeans.stream()
@@ -61,7 +61,7 @@ public class WeatherModel implements IWeatherModel {
     }
 
     @Override
-    public void getCityData() {
+    public void getCityData(IWeatherPresenter mWeatherPresenter) {
         Retrofit retrofit = RetrofitManger.getInstance().createApiClient(AppConfig.city_url);
         retrofit.create(ApiInterfaceService.class)
                 .getChinaCities()
@@ -98,4 +98,8 @@ public class WeatherModel implements IWeatherModel {
                 });
     }
 
+    @Override
+    public void onDestroy() {
+
+    }
 }

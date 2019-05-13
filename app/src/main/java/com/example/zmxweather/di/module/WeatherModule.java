@@ -1,7 +1,8 @@
 package com.example.zmxweather.di.module;
 
 import com.example.zmxweather.adapters.CityAdapter;
-import com.example.zmxweather.mvp.presenter.WeatherPresenter;
+import com.example.zmxweather.mvp.model.IWeatherModel;
+import com.example.zmxweather.mvp.model.WeatherModel;
 import com.example.zmxweather.mvp.view.IWeatherView;
 
 import dagger.Module;
@@ -22,8 +23,8 @@ public class WeatherModule {
     }
 
     @Provides
-    public WeatherPresenter providesWeatherPresenter() {
-        return new WeatherPresenter(mIWeatherView);
+    public IWeatherModel providesWeatherModel(WeatherModel model) {
+        return model;
     }
 
     @Provides
