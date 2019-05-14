@@ -5,6 +5,8 @@ import com.example.zmxweather.mvp.model.IWeatherModel;
 import com.example.zmxweather.mvp.model.WeatherModel;
 import com.example.zmxweather.mvp.view.IWeatherView;
 
+import javax.inject.Named;
+
 import dagger.Module;
 import dagger.Provides;
 

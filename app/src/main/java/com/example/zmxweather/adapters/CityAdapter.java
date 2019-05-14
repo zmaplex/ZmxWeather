@@ -10,15 +10,20 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.zmxweather.AppConfig;
 import com.example.zmxweather.R;
+import com.example.zmxweather.ZmApplication;
 import com.example.zmxweather.api.ApiWeatherService;
 import com.example.zmxweather.bean.CityBean;
 import com.example.zmxweather.bean.WeatherBean;
+import com.example.zmxweather.di.component.DaggerRetrofitComponent;
+import com.example.zmxweather.di.module.RetrofitModule;
 import com.example.zmxweather.utils.RetrofitManger;
 
 import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import javax.inject.Inject;
 
 import io.reactivex.Observer;
 import io.reactivex.android.schedulers.AndroidSchedulers;
@@ -28,11 +33,15 @@ import retrofit2.Retrofit;
 import timber.log.Timber;
 
 public class CityAdapter extends RecyclerView.Adapter<CityAdapter.ViewHolder> {
-    Retrofit retrofit = RetrofitManger.getInstance().createApiClient(AppConfig.weather_url);
+    @Inject
+    Retrofit retrofit;
     private List<CityBean> cityBeans = new ArrayList<>();
 
     public CityAdapter() {
-
+        DaggerRetrofitComponent.builder().retrofitModule(new RetrofitModule(AppConfig.weather_url))
+                .appComponent(ZmApplication.getAppComponent())
+                .build()
+                .inject(this);
     }
 
     public List<CityBean> getCityBeans() {
