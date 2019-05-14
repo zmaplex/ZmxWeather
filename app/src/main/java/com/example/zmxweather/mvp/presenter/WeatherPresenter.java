@@ -9,14 +9,25 @@ import java.util.List;
 
 import javax.inject.Inject;
 
+import retrofit2.Retrofit;
 import timber.log.Timber;
 
 public class WeatherPresenter extends BasePresenter<IWeatherModel, IWeatherView> implements IWeatherPresenter {
 
+    Retrofit retrofit;
+
     @Inject
-    public WeatherPresenter(IWeatherModel WeatherModel, IWeatherView weatherView) {
+    public WeatherPresenter(IWeatherModel WeatherModel, IWeatherView weatherView, Retrofit retrofit) {
         super(WeatherModel, weatherView);
+        this.retrofit = retrofit;
+
     }
+
+    @Override
+    public Retrofit getRetrofit() {
+        return retrofit;
+    }
+
 
     @Override
     public void getCityData() {

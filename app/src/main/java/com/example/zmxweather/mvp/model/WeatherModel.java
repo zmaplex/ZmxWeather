@@ -62,7 +62,7 @@ public class WeatherModel implements IWeatherModel {
 
     @Override
     public void getCityData(IWeatherPresenter mWeatherPresenter) {
-        Retrofit retrofit = RetrofitManger.getInstance().createApiClient(AppConfig.city_url);
+        Retrofit retrofit = mWeatherPresenter.getRetrofit();
         retrofit.create(ApiInterfaceService.class)
                 .getChinaCities()
                 //RxJava 变换

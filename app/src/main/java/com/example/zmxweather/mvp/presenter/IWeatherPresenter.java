@@ -4,9 +4,12 @@ import com.example.zmxweather.bean.CityBean;
 
 import java.util.List;
 
+import retrofit2.Retrofit;
+
 public interface IWeatherPresenter {
     void getCityData();
 
+    Retrofit getRetrofit();
     void getCityDataSuccess(List<CityBean> cityBeans);
 
     void getCityDataFail(Throwable e);

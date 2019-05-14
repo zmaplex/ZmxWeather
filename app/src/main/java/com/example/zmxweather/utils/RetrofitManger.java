@@ -26,6 +26,7 @@ public class RetrofitManger {
     }
 
     // create retrofit singleton
+    @Deprecated
     public Retrofit createApiClient(String baseUrl) {
         return new Retrofit.Builder()
                 .baseUrl(baseUrl)

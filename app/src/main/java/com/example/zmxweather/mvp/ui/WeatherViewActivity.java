@@ -9,10 +9,13 @@ import androidx.annotation.Nullable;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.zmxweather.AppConfig;
 import com.example.zmxweather.R;
+import com.example.zmxweather.ZmApplication;
 import com.example.zmxweather.adapters.CityAdapter;
 import com.example.zmxweather.bean.CityBean;
 import com.example.zmxweather.di.component.DaggerWeatherComponent;
+import com.example.zmxweather.di.module.RetrofitModule;
 import com.example.zmxweather.di.module.WeatherModule;
 import com.example.zmxweather.mvp.presenter.WeatherPresenter;
 import com.example.zmxweather.mvp.view.IWeatherView;
@@ -22,12 +25,16 @@ import java.util.List;
 
 import javax.inject.Inject;
 
+import retrofit2.Retrofit;
+
 public class WeatherViewActivity extends BaseMVPActivity<WeatherPresenter> implements IWeatherView, SearchView.OnQueryTextListener {
 
     @Inject
     WeatherPresenter mWeatherPresenter;
     @Inject
     CityAdapter adapter;
+    @Inject
+    Retrofit retrofit;
     private RecyclerView recyclerView;
 
     @Override
@@ -36,6 +43,8 @@ public class WeatherViewActivity extends BaseMVPActivity<WeatherPresenter> imple
         setContentView(R.layout.activity_weather);
         DaggerWeatherComponent.builder()
                 .weatherModule(new WeatherModule(this))
+                .retrofitModule(new RetrofitModule(AppConfig.city_url))
+                .appComponent(ZmApplication.getAppComponent())
                 .build()
                 .inject(this);
         init();
