@@ -12,7 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.zmxweather.AppConfig;
 import com.example.zmxweather.R;
 import com.example.zmxweather.ZmApplication;
-import com.example.zmxweather.adapters.CityAdapter;
+import com.example.zmxweather.mvp.ui.adapter.CityAdapter;
 import com.example.zmxweather.bean.CityBean;
 import com.example.zmxweather.di.component.DaggerWeatherComponent;
 import com.example.zmxweather.di.module.RetrofitModule;

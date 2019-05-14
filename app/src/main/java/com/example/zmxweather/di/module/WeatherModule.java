@@ -1,11 +1,9 @@
 package com.example.zmxweather.di.module;
 
-import com.example.zmxweather.adapters.CityAdapter;
+import com.example.zmxweather.mvp.ui.adapter.CityAdapter;
 import com.example.zmxweather.mvp.model.IWeatherModel;
 import com.example.zmxweather.mvp.model.WeatherModel;
 import com.example.zmxweather.mvp.view.IWeatherView;
-
-import javax.inject.Named;
 
 import dagger.Module;
 import dagger.Provides;

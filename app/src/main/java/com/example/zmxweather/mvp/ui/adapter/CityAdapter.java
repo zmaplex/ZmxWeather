@@ -1,4 +1,4 @@
-package com.example.zmxweather.adapters;
+package com.example.zmxweather.mvp.ui.adapter;
 
 import android.annotation.SuppressLint;
 import android.view.LayoutInflater;
@@ -16,7 +16,6 @@ import com.example.zmxweather.bean.CityBean;
 import com.example.zmxweather.bean.WeatherBean;
 import com.example.zmxweather.di.component.DaggerRetrofitComponent;
 import com.example.zmxweather.di.module.RetrofitModule;
-import com.example.zmxweather.utils.RetrofitManger;
 
 import org.jetbrains.annotations.NotNull;
 
